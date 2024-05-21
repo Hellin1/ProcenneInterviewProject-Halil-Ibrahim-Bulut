@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application;
+using Application.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,7 +22,8 @@ public static class ServiceRegistration
         services.AddScoped<IBookRepository, BookRepository>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<IIdentityService, IdentityService>();
-        //services.AddScoped<ITransactionManager, TransactionManager>();
+        services.AddScoped<ITransactionManager, TransactionManager>();
+
 
     }
 }
